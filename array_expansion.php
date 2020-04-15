@@ -220,7 +220,6 @@ function array_select($arr, $search_data, $all_rows = false)
                             'is_'.str_replace('not-', '', $op), 
                             $var
                         );
-                        var_dump(! empty($var));
                     break;
                     
                     case 'regexp':
