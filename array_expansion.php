@@ -42,10 +42,10 @@ function array_unset_value(&$arr, $value, $save_keys = true)
     foreach ($keys as $key) {
         unset($arr[ $key ]);
     }
-	
-	if (! $save_keys) {
-		$arr = array_values($arr);
-	}
+    
+    if (! $save_keys) {
+        $arr = array_values($arr);
+    }
 }
 
 /**
@@ -205,8 +205,8 @@ function array_select($arr, $search_data, $all_rows = false)
                     case 'object':
                     case 'string':
                     case 'bool':
-						$bool = call_user_func( 'is_'.$op, $var );
-					break;
+                        $bool = call_user_func( 'is_'.$op, $var );
+                    break;
                     
                     case 'not-array':
                     case 'not-int':
@@ -216,13 +216,13 @@ function array_select($arr, $search_data, $all_rows = false)
                     case 'not-object':
                     case 'not-string':
                     case 'not-bool':
-						$bool = ! call_user_func( 
-							'is_'.str_replace('not-', '', $op), 
-							$var
-						);
-						var_dump(! empty($var));
-					break;
-					
+                        $bool = ! call_user_func( 
+                            'is_'.str_replace('not-', '', $op), 
+                            $var
+                        );
+                        var_dump(! empty($var));
+                    break;
+                    
                     case 'regexp':
                         $flags = ! empty($p1) ? $p1 : 'isu';
                         
@@ -273,18 +273,18 @@ function array_order($arr, $order_by, $save_keys = false, $default_not_isset = n
             $var2 = &$two;
             
             foreach ($keys as $item)
-			{
-				if (isset($var1[ $item ])) {
-					$var1 = &$var1[ $item ];
-				} else {
-					$var1 = $default_not_isset;
-				}
-				
-				if (isset($var2[ $item ])) {
-					$var2 = &$var2[ $item ];
-				} else {
-					$var2 = $default_not_isset;
-				}
+            {
+                if (isset($var1[ $item ])) {
+                    $var1 = &$var1[ $item ];
+                } else {
+                    $var1 = $default_not_isset;
+                }
+                
+                if (isset($var2[ $item ])) {
+                    $var2 = &$var2[ $item ];
+                } else {
+                    $var2 = $default_not_isset;
+                }
             }
             
             if ($var1 == $var2) {
@@ -367,31 +367,31 @@ function array_index($arr, $columns, $in_lists = false, $index_implode_glue = ',
  */
 function array_merge_by_rule($arr1, $arr2, $all_columns = true, $rule = [])
 {
-	$tmp_arr1 = $arr1;
-	
-	if ($all_columns) {
-		$arr1 = array_merge($arr1, $arr2);
-	}
-	
-	foreach ($rule as $key => $method)
-	{
-		switch ($method)
-		{
-			case '+': $arr1[ $key ] = $tmp_arr1[ $key ] + $arr2[ $key ]; break;
-				
-			case '-': $arr1[ $key ] = $tmp_arr1[ $key ] - $arr2[ $key ]; break;
-				
-			case 'save-1':  $arr1[ $key ] = $tmp_arr1[ $key ]; break;
-				
-			case 'save-2':  $arr1[ $key ] = $arr2[ $key ]; break;
-				
-			case 'merge-1': $arr1[ $key ] = array_merge($tmp_arr1[ $key ], $arr2[ $key ]); break;
-				
-			case 'merge-2': $arr1[ $key ] = array_merge($arr2[ $key ], $tmp_arr1[ $key ]); break;
-		}
-	}
-	
-	return $arr1;
+    $tmp_arr1 = $arr1;
+    
+    if ($all_columns) {
+        $arr1 = array_merge($arr1, $arr2);
+    }
+    
+    foreach ($rule as $key => $method)
+    {
+        switch ($method)
+        {
+            case '+': $arr1[ $key ] = $tmp_arr1[ $key ] + $arr2[ $key ]; break;
+                
+            case '-': $arr1[ $key ] = $tmp_arr1[ $key ] - $arr2[ $key ]; break;
+                
+            case 'save-1':  $arr1[ $key ] = $tmp_arr1[ $key ]; break;
+                
+            case 'save-2':  $arr1[ $key ] = $arr2[ $key ]; break;
+                
+            case 'merge-1': $arr1[ $key ] = array_merge($tmp_arr1[ $key ], $arr2[ $key ]); break;
+                
+            case 'merge-2': $arr1[ $key ] = array_merge($arr2[ $key ], $tmp_arr1[ $key ]); break;
+        }
+    }
+    
+    return $arr1;
 }
 
 /**
@@ -417,8 +417,8 @@ function array_dimens_merge($arr1, $arr2, $columns, $all_columns = true, $rule =
     }
     
     $arr1 = array_values($arr1);
-	
-	return $arr1;
+    
+    return $arr1;
 }
 
 /**
