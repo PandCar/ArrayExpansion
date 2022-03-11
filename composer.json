@@ -1,0 +1,25 @@
+{
+    "name": "pandcar/array-expansion",
+    "description": "Additional functions for working with arrays.",
+    "license": "MIT",
+    "require": {
+	    "php": "^5.6 || ^7.0 || ^8.0"
+    },
+	"authors": [
+		{
+			"name": "Oleg Isaev",
+			"email": "pandcar@mail.ru",
+			"homepage": "https://t.me/pandcar"
+		},
+		{
+			"name": "Vasily Heartfelt",
+			"homepage": "https://t.me/morepusto"
+		}
+	],
+	"autoload": {
+		"classmap": ["src/ArrayExpansion.php"]
+	},
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
