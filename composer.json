@@ -3,7 +3,7 @@
     "description": "Additional functions for working with arrays.",
     "license": "MIT",
     "require": {
-	    "php": "^5.6 || ^7.0 || ^8.0"
+	    "php": "^7.3 || ^8.0"
     },
 	"authors": [
 		{
@@ -13,6 +13,7 @@
 		},
 		{
 			"name": "Vasily Heartfelt",
+			"email": "morepusto@yandex.ru",
 			"homepage": "https://t.me/morepusto"
 		}
 	],
